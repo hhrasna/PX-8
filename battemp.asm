@@ -62,19 +62,15 @@ Na2	inc	b
 	pop af		;safer than ld a,c
 	ret
 
-conout	ld      hl,02h
-	ld      d,(hl)
-        ld      hl,01h
-        ld      e,(hl)
+conout  ld      hl,01h
+        ld      de,(hl)
         ld      ix,09h
         add     ix,de
         jp      (ix)
 	ret
 
-beep	ld      hl,02h
-	ld      d,(hl)
-        ld      hl,01h
-        ld      e,(hl)
+beep    ld      hl,01h
+        ld      de,(hl)
         ld      ix,36h
         add     ix,de
 	ld	de,0x0060
